@@ -1,0 +1,27 @@
+.mlr10{
+	margin-left:10px;
+	margin-right:10px;
+}
+th,td{
+	text-align:center;
+}
+.width180{
+	width:180px;
+}
+#accountDetail a:hover, a:focus {
+    color: #23527c;
+    text-decoration: none;
+}
+.add-goods{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: #777;
+    text-align: left;
+}
+.width100{
+	width:100px;
+}
+.btn-center{
+	width:220px;
+	margin:0 auto;
+}

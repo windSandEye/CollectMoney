@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>没钱赚商店</title>
+		<link href="../js/bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet">
+		<link href="../css/collectmoney.css" rel="stylesheet">
+		<script src="../js/jquery/jquery-2.1.1.min.js"></script>
+		<script src="../js/bootstrap-3.3.5-dist/js/bootstrap.js"></script>
+		<script src="../js/angular-1.4.0-rc.2/angular.min.js"></script>
+		<script src="../jsproject/collcetmoney/common.js"></script>
+		<script src="../jsproject/collcetmoney/collectController.js"></script>
+	</head>
+
+	<body>
+		<div ng-app="accountApp" ng-controller="accountCtrl">
+			<div class="col-md-8 col-lg-8" id="accountDetail">
+				<table class="table table-bordered table-hover">
+					<caption>商品清单</caption>
+					<tr>
+						<th>商品名称</th>
+						<th class="width180">价格（元）</th>
+						<th class="width180">数量</th>
+						<th class="width180">操作</th>
+					</tr>
+					<tr ng-repeat="thing in goods">
+						<td>{{ thing.name }}</td>
+						<td>{{ thing.price}}</td>
+						<td>{{ thing.number}}{{thing.unit}}</td>
+						<td>
+							<a ng-click="addNum($index)" class="mlr10"><span class="glyphicon glyphicon-plus "></span> </a>
+							<a ng-click="reduceNum($index)" class="mlr10"><span class="glyphicon glyphicon-minus"></span> </a>
+							<a ng-click="deleteThing($index)" class="mlr10"><span class="glyphicon glyphicon-trash"></span> </a>
+						</td>
+					</tr>
+				</table>
+				<div class="col-md-8">
+					<button type="button" ng-click="countMoney()" class="btn btn-primary width100">结算</button>
+				</div>
+				<div class="col-md-4">
+					<button type="button" ng-click="generateBarCode()" class="btn btn-primary width100">生成条形码</button>
+				</div>
+				<div class="col-md-8">
+					<div>***没钱赚商店***</div>
+					<div ng-repeat="cargo in totalGoods">
+						名称：{{cargo.name}}，数量：{{cargo.number}}{{cargo.unit}}， 价格：{{cargo.price}}(元)，小计：{{cargo.subtotal}}(元) <span ng-show="{{cargo.specialOffer == 2}}">,节省：{{cargo.saveMoney}}</span>
+					</div>
+					<div ng-show="isGive">
+						<div>
+							-----------------</br> 买二赠一商品:
+						</div>
+						<div ng-repeat="give in giveGoods">
+							名称：{{give.name}}，数量：{{give.number}}{{cargo.unit}}</div>
+					</div>
+					<div>
+						<div>-----------------</div>
+						<div>总计：{{totalMoney}}(元)</div>
+						<div ng-show="isDiscount">节省：{{saveTotalMoney}}(元)</div>
+						*****************
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div ng-repeat="code in barCodeArr track by $index">{{code}}</div>
+				</div>
+			</div>
+			<div class="col-md-4 col-lg-4">
+				<form class="form-horizontal" role="form">
+					<div class="add-goods">添加商品</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">条形码:</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" ng-model="addBarCode" id="addBarCode" placeholder="请输入条形码" ng-blur="findGoods()">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="name" class="col-sm-3 control-label">商品名称:</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="name" readonly ng-model="addGoods.name">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="price" class="col-sm-3 control-label">商品价格:</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="price" readonly ng-model="addGoods.price">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="number" class="col-sm-3 control-label">商品数量:</label>
+						<div class="col-sm-9">
+							<input type="number" class="form-control" ng-model="addGoods.number" value="1">
+						</div>
+					</div>
+					<div>
+						<div class="btn-center">
+							<button type="button" class="btn btn-primary width100" ng-click="addGoodThing()">确认</button>
+							<a href="collectmoney/discount.html" type="button" class="btn btn-primary width100">优惠活动</a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</body>
+
+</html>

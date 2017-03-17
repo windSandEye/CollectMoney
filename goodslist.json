@@ -1,0 +1,24 @@
+[{
+		"barCode" : "ITEM00001",
+		"name" : "盐汽水",
+		"unit":"瓶",
+		"price" : 3.00,
+		"category" : "饮料",
+		"specialOffer" : null
+	},{
+		"barCode" : "ITEM00002",
+		"name" : "方便面",
+		"unit":"桶",
+		"price" : 3.0,
+		"category" : "零食",
+		"specialOffer" : null
+	},
+	{
+		"barCode" : "ITEM00003",
+		"name" : "鸡蛋",
+		"unit":"个",
+		"price" : 1.5,
+		"category" : "早餐",
+		"specialOffer" : null
+	}
+]

@@ -1,0 +1,53 @@
+{
+	"accountDetail": [ {
+		"barCode" : "ITEM00001",
+		"name" : "盐汽水",
+		"number" : 1,
+		"unit":"瓶",
+		"price" : 3.00,
+		"category" : "饮料",
+		"specialOffer" : "1"
+	}, {
+		"barCode" : "ITEM00001",
+		"name" : "盐汽水",
+		"number" : 1,
+		"unit":"瓶",
+		"price" : 3.0,
+		"category" : "饮料",
+		"specialOffer" : "1"
+	}, {
+		"barCode" : "ITEM00001",
+		"name" : "盐汽水",
+		"number" : 1,
+		"unit":"瓶",
+		"price" : 3.0,
+		"category" : "饮料",
+		"specialOffer" : "1"
+	} ,{
+		"barCode" : "ITEM00002",
+		"name" : "方便面",
+		"number" : 4,
+		"unit":"桶",
+		"price" : 3.0,
+		"category" : "零食",
+		"specialOffer" : "2"
+	} ,{
+		"barCode" : "ITEM00002",
+		"name" : "方便面",
+		"number" : 1,
+		"unit":"桶",
+		"price" : 3.0,
+		"category" : "零食",
+		"specialOffer" : "2"
+	} ,
+	{
+		"barCode" : "ITEM00003",
+		"name" : "鸡蛋",
+		"number" : 1,
+		"unit":"个",
+		"price" : 1.5,
+		"category" : "早餐",
+		"specialOffer" : null
+	} 
+	]
+}
